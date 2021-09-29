@@ -1,18 +1,16 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.anstarovoyt.intellijexcludeindexing</id>
-    <name>intellij-exclude-indexing</name>
-    <vendor>anstarovoyt</vendor>
-
-    <depends>com.intellij.modules.platform</depends>
-
+    <id>intellij.exclude.indexing</id>
+    <name>Index Excluder</name>
+    <description>
+        Provides a way to control indexing of JS files.
+    </description>
+    <vendor email="andrey.starovoyt@jetbrains.com" url="https://github.com/anstarovoyt/intellij-exclude-indexing">
+        Andrey Starovoyt
+    </vendor>
+    <depends>JavaScript</depends>
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.anstarovoyt.intellijexcludeindexing.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.anstarovoyt.intellijexcludeindexing.services.MyProjectService"/>
+        <projectConfigurable instance="intellij.plugin.ExcludeConfigurable"/>
+        <projectService serviceImplementation="intellij.plugin.ExcludeSettings"/>
+        <lang.substitutor language="JavaScript" implementationClass="intellij.plugin.ExcludeLanguageSubstitutor" />
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.anstarovoyt.intellijexcludeindexing.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
