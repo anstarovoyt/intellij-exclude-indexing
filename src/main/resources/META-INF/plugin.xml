@@ -1,12 +1,12 @@
 <idea-plugin>
     <id>intellij.exclude.indexing</id>
     <name>Index Excluder</name>
-    <description>
-        Provides a way to control indexing of JS files.
-    </description>
     <vendor email="andrey.starovoyt@jetbrains.com" url="https://github.com/anstarovoyt/intellij-exclude-indexing">
         Andrey Starovoyt
     </vendor>
+    <description>
+        Provides a way to control indexing of JS files.
+    </description>
     <depends>JavaScript</depends>
     <extensions defaultExtensionNs="com.intellij">
         <projectConfigurable instance="intellij.plugin.ExcludeConfigurable"/>
