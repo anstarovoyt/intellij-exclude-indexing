@@ -8,6 +8,7 @@
         Provides a way to control indexing of JS files.
     </description>
     <depends>JavaScript</depends>
+    <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
         <projectConfigurable instance="intellij.plugin.ExcludeConfigurable"/>
         <projectService serviceImplementation="intellij.plugin.ExcludeSettings"/>
