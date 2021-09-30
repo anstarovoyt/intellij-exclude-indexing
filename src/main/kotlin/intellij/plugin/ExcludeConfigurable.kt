@@ -1,7 +1,6 @@
 package intellij.plugin
 
 import com.intellij.openapi.application.WriteAction
-import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.project.Project
@@ -11,16 +10,15 @@ import java.awt.BorderLayout
 import javax.swing.ButtonGroup
 import javax.swing.JComponent
 import javax.swing.JPanel
-import javax.swing.border.Border
 
 class ExcludeConfigurable(private val project: Project) : Configurable {
 
     private val myDefault = JBRadioButton("Default")
     private val myDisableJavaScript = JBRadioButton("Ignore JavaScript files for the project")
     private val myDisableIndexing = JBRadioButton("Disable indexing of JavaScript files for the project")
-    private val myDisableIndexingMinified = JBRadioButton("Disable indexing of minified JavaScript files for the project")
+    private val myDisableIndexingMinified = JBRadioButton("Ignore minified JavaScript files for the project")
 
-    override fun createComponent(): JComponent? {
+    override fun createComponent(): JComponent {
         val builder = FormBuilder.createFormBuilder()
         builder.addComponent(myDefault)
         builder.addComponent(myDisableJavaScript)
