@@ -1,6 +1,6 @@
 # intellij-exclude-indexing
 
-Simple plugin for excluding indexing JavaScript files in a project.
+Simple plugin for excluding indexing JavaScript files per project.
 
 There are three dirrent ways supported:
 
